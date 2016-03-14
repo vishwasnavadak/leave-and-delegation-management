@@ -1,0 +1,437 @@
+/*
+Leave and Delegation System is a Web Application that helps to manage Leaves and Delegation easily. 
+
+**Project Guide: 
+Hemanth Kumar G (hemanthjois@gmail.com) 
+Dept. of Computer Science, 
+NMAM Institute of Technology,Nitte.
+
+**Group Name: 
+Decryptors
+
+**Group Members: 
+Dharmitha S Shetty (dsdishashetty@gmail.com) 
+Laxmikanth Madhyastha (laxmikanthmadhyastha.35@gmail.com) 
+Manjuprasad Shetty N (manju.mpsn@gmail.com) 
+Pallavi A (pallaviangraje@gmail.com) 
+Vishwasa Navada K (navadavishwas@gmail.com) 
+*/
+
+/*HTML5 support for older browsers*/
+section, article, aside, header, footer, nav, figure, figcaption{
+	display: block;
+	overflow: hidden;
+}
+/*Overriding default html rules*/
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{
+	color:#222;
+	text-decoration: underline;
+}
+pre{
+	font-family: verdana;
+	font-size: 1em;
+	margin:0;
+	padding:0;
+	line-height: 2em;
+}
+img{
+	outline: none;
+}
+/*CSS for web application starts*/
+body{
+	margin: 0;
+	padding:0;
+	height: 100%;
+	width: 100%;
+	font-family: verdana;
+	font-size: .9em;
+	background: url("images/bg.jpg") center center  no-repeat fixed;
+	background-size: cover;
+}
+.mainb{
+	margin: 0 ;
+	padding:0;
+	height: 100%;
+	width: 100%;
+	font-family: verdana;
+	background: url("images/bg2.jpg")   no-repeat fixed;
+	background-size: cover;
+}
+
+header{
+	position: relative;
+	display: table;
+	max-height: 90px;
+	height: auto;
+	color: #000;
+	width:100%;
+	background: #fff;
+	clear: both;
+	box-shadow: 0 0 10px #888;
+}
+h1,h2,h3,h4{
+	margin:0;
+	padding: 6px;
+}
+.subhead{
+	display: inline-block;
+	position: relative;
+	width: 100%;
+}
+nav{
+	float: left;
+	font-size: .98em;
+	font-weight: bold;
+	margin:5px;
+	margin-bottom: -18px !important;
+	padding: 3px;
+	border:0;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	background: #ddd;
+	height:30px;
+}
+nav a{
+	color: #000;
+	margin:2px;
+	padding: 4px;
+	text-decoration: none;
+}
+section{
+	position: relative;
+	display: table;
+	margin:20px 10px;
+	float: left;
+	min-width:70%;
+	max-width:900px;
+	min-height: 480px;
+	height: auto;
+	background: rgba(255 ,255,255,.8);
+	padding: 10px;
+	border-radius: 5px;	
+	box-shadow: 0 0 5px #888;
+}
+.content{
+	height: auto;
+	width: auto;
+	position: relative;
+	display: table-cell;
+	margin: 5px;
+	padding: 8px;
+	text-align: left;
+}
+section h3{
+	font-size: 16px;
+	text-align: left;
+	border-bottom:rgba(2,2,2,.5) 2px solid;
+}
+.tog{
+	cursor: pointer;
+}
+.leaves{
+	display: none ;
+	padding: 7px;
+}
+table{
+	width:100%;
+	border:#666 1px solid ;
+	border-radius: 5px;
+	border-collapse: collapse;
+}
+th{
+	border-bottom:#444 1px solid; 
+	padding: 8px;
+	color:#111;
+}
+td{
+	padding: 8px;
+}
+.aprv, .decl{
+	text-decoration: none;
+}
+.aprv{
+	color: #17851A;
+}
+.decl{
+	color: red;
+}
+.content .formc{
+	position: relative;
+	display: block;
+	padding: 7px;
+}
+
+.forminputs input[type='text']{
+	text-align: left;
+	display: block;
+	margin: 5px;
+	padding: 5px;
+	border: #aaa 1px solid;
+	border-radius: 5px;
+	width:95%;
+	font-size: 1em;
+	background: #fff;
+}
+.forminputs input[type='text']:focus{
+	outline: 0;
+	box-shadow: 0 0 3px #123;
+}
+.content .buttons{
+	margin: 0 auto;
+	width: auto;
+	text-align: center;
+}
+.forminputs button,button{
+	width: 85px;
+	height:35px;
+	margin: 5px;
+	padding: 5px;
+	background: #ccc;
+	cursor: pointer;
+	border: #888 1px solid;
+	border-radius: 5px;
+	font-size: 1em;
+	font-family: verdana;
+}
+.forminputs button:hover{
+	outline: 0;
+	box-shadow: 0 0 3px #123;
+}
+aside{
+	position: relative;
+	padding:0;
+	float: left;
+	margin:20px 10px;
+	width: 25%;
+}
+
+aside .side{
+	background: rgba(255 ,255,255,.8);
+	border-radius: 5px;	
+	margin-bottom:15px;
+	box-shadow: 0 0 5px #888;	
+	text-align: center;
+}
+.side h5{
+	margin: 0px;
+	padding: 5px;
+	font-size: 1em;
+	text-align: center;
+	background:  rgba(255 ,255,255,.8);
+	border-bottom:rgba(0 ,0,0,.5) 2px solid;
+}
+.side p{
+	padding: 0 8px 0 8px;
+	margin:2px;
+}
+.side a{
+	text-decoration: none;
+	color: #000;
+}
+.table1, .table2, .table3, .table4, .table5{
+	margin: 0 auto;
+	position: relative;
+	width:85%;
+	border: none;
+	border-collapse: collapse;
+	text-align: left;
+	font-size: .9em;
+}
+.table1, .table2, .table3, .table4 .table5 th{
+	border: none;
+}
+.index{
+	margin:50px;
+	padding: 15px;
+	display: table;
+	width: auto;
+	height: auto;
+	max-width:750px;
+	max-height: 450px;
+	background: rgba(255,255,255,.5);
+	border-radius: 10px;
+	box-shadow: 0 0 50px rgba(255,255,255,.3);
+	float: right;
+}
+.index p{
+	padding: 5px;
+	line-height: 1.5em;
+	width:auto;
+}
+.btn {
+	position: relative;
+	display: block;
+	margin:20px auto;
+	text-align: center;
+	padding-right: 15px;
+}
+.btn img{
+	position: relative;
+	margin: 5px;
+	width:250px;
+	height: 200px;
+	display: inline-block;
+	border-radius: 5px;
+	opacity: .7;
+
+}
+.btn img:hover{
+	box-shadow: 0 0 10px rgba(255,255,255,.8);
+	opacity: .8;
+}
+
+
+/* Responsive Conditions */
+/*Devices with screen size from 220px to 768px, generally smart phones*/
+
+@media only screen and (min-width: 220px) and (max-width:768px) {
+	header{
+		height: 100px;
+	}
+	h1,header h2{
+		font-size: 1.3em;
+	}	
+	section{
+		margin:5px;
+		padding:5px;
+		clear: both;
+		width:90%;
+		height: auto;
+	}
+	aside{
+		margin:5px;
+		padding:5px;
+		clear: both;
+		width: 90%;
+	}
+	.index{
+		margin: 0px;
+		float: none;
+	}
+	th{
+		display: none;
+	}
+	tr{
+		border-top:#444 2px solid;
+	}
+	td{
+		border-top:#444 1px solid;
+	}
+	td:before{
+		font-weight: bold;
+	}
+	td:nth-of-type(1):before{
+		content: "UserID: ";
+		padding: 5px;
+	}
+	td:nth-of-type(2):before{
+		content: "Start Date: ";
+		padding: 5px;
+	}
+	td:nth-of-type(3):before{
+		content: "End Date: ";
+		padding: 5px;
+	}
+	td:nth-of-type(4):before{
+		content: "Action: ";
+		padding: 5px;
+	}
+	td{
+		display: block;
+	}
+	/* Change table headers in mobile devices */
+	.table1 td:nth-of-type(1):before{
+		content: "TeamLeadID: ";
+	}
+	.table1 td:nth-of-type(2):before{
+		content: "TeamName: ";
+	}
+	.table2 td:nth-of-type(1):before{
+		content: "UserID: ";
+	}
+	.table2 td:nth-of-type(2):before{
+		content: "Full Name: ";
+	}
+	.table3 td:nth-of-type(1):before{
+		content: "LeaveID: " ;
+	}
+	.table3 td:nth-of-type(2):before{
+		content: "Status: ";
+	}
+	.table4 td:nth-of-type(1):before{
+		content: "DelegateeID: " ;
+	}
+	.table4 td:nth-of-type(2):before{
+		content: "Period: ";
+	}
+	.table5 td:nth-of-type(1):before{
+		content: "User ID: ";
+	}
+	.table5 td:nth-of-type(2):before{
+		content: "Full Name: ";
+	}
+	.table5 td:nth-of-type(3):before{
+		content: "EMail Address: " ;
+	}
+}
+
+/*Devices with width from 768px to 1024px, generally Tablets*/
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+
+	section{
+		margin:10px 3px;
+		padding:5px;
+		width:60%;
+	}
+	aside{
+		margin:6px 3px;
+		padding:5px;
+		width: 25%;
+	}
+
+}
+
+/* For devices with more than 1024px width */
+@media only screen and (min-width: 1025px)  {
+	section{
+		margin:20px 10px;
+		padding:5px;
+
+	}
+	aside{
+		margin:16px 5px;
+		padding:5px;
+
+	}
+}
+
+/* Limit some sections when Print(Ctrl+P) is pressed. Specially for userlist.php page*/
+@media print {
+	h1{
+		font-size: 1.8em;
+	}
+	.content{
+		width:100%;
+	}
+	.table5{
+		width:100%;
+	}
+	section{
+		margin:5px;
+		padding: 3px;
+		width:100%;
+		font-size: 1.3em;
+	}
+	nav{
+		display: none;
+	}
+	.buttons{
+		display: none;
+	}
+}
+
+/*End*/
